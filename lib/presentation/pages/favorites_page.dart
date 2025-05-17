@@ -5,7 +5,7 @@ import '../controllers/favorites_controller.dart';
 import '../routes/app_routes.dart';
 import '../widgets/movie_card.dart';
 
-class FavoritesPage extends StatefulWidget {
+class FavoritesPage extends StatefulWidget  {
   const FavoritesPage({super.key});
 
   @override
@@ -19,13 +19,6 @@ class _FavoritesPageState extends State<FavoritesPage> {
   void initState() {
     super.initState();
     controller.loadFavoriteMovies();
-  }
-
-  @override
-  void didChangeAppLifecycleState(AppLifecycleState state) {
-    if (state == AppLifecycleState.resumed) {
-      controller.loadFavoriteMovies();
-    }
   }
 
   @override
@@ -110,7 +103,9 @@ class _FavoritesPageState extends State<FavoritesPage> {
                   onTap: () => Get.toNamed(
                     AppRoutes.movieDetail,
                     arguments: movie.id,
-                  ),
+                  )?.then((value) {
+                    controller.loadFavoriteMovies();
+                  }),
                 ),
               );
             },
