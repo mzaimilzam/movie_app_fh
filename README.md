@@ -48,25 +48,6 @@ A Flutter application that displays movies from The Movie Database (TMDB) API, a
    flutter run
    ```
 
-## Makefile Commands
-
-For convenience, this project includes a makefile with the following commands:
-
-- `make init`: Runs clean, get, generate, and l10n commands in sequence
-- `make clean`: Cleans the project using `flutter clean`
-- `make get`: Updates dependencies using `flutter pub get`
-- `make generate`: Generates code using build_runner
-- `make l10n`: Generates localization files
-- `make translation-keys`: Generates translation keys
-- `make run`: Runs the example app
-
-Example usage:
-```
-make init    # Initialize the project
-make clean   # Clean the project
-make generate # Generate code
-```
-
 ## Architecture
 
 The app follows Clean Architecture principles with three main layers:
@@ -104,6 +85,3 @@ Run the tests with:
 flutter test
 ```
 
-## License
-
-This project is licensed under the MIT License.
